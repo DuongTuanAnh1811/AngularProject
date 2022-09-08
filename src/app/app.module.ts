@@ -1,3 +1,5 @@
+import { BundlecategoryComponent } from './components/bundlecategory/bundlecategory.component';
+import { BundleComponent } from './components/bundle/bundle.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -26,7 +28,13 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
 );
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, TreeDropdownComponent],
+  declarations: [
+    AppComponent,
+    SigninComponent,
+    TreeDropdownComponent,
+    BundleComponent,
+    BundlecategoryComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,50 +1,24 @@
-<div class="menu-container" clickOutside (clickOutside)="clickOutside()">
-  <div class="menu-toggler" (click)="togglerMenu()">Toggle menu</div>
+<div class="menu-container">
+  <div class="menu-toggler" (click)="togglerMenu()">Menu</div>
   <div class="menu" *ngIf="isMenuOpened">
-    <div class="menu-item"><a routerLink="/bundle">Bundle</a></div>
-    <div class="menu-item">
-      <a routerLink="/bundleCategory">Bundle category</a>
+    <div class="menu-item" (click)="clickBundle()">Bundle</div>
+    <div class="menu-item" (click)="clickBundleCategory()">Bundle category</div>
+    <div class="menu-item" (click)="togglerMenu1()">
+      About
+      <div class="menu" *ngIf="isMenuOpened1">
+        <div class="menu-item">Other 1</div>
+        <div class="menu-item">Other 2</div>
+      </div>
     </div>
-    <div class="menu-item">About</div>
   </div>
 </div>
 
+<span *ngIf="accessBundle; then bundle"> </span>
+<ng-template #bundle>
+  <app-bundle> </app-bundle>
+</ng-template>
+<span *ngIf="accessBundleCategory; then bundleCategory"> </span>
+<ng-template #bundleCategory>
+  <app-bundlecategory></app-bundlecategory>
+</ng-template>
 <button (click)="signout()">Sign Out</button>
-
-<ul id="myUL">
-  <li>
-    <span class="caret">Beverages</span>
-    <ul class="nested">
-      <li>Water</li>
-      <li>Coffee</li>
-      <li>
-        <span class="caret">Tea</span>
-        <ul class="nested">
-          <li>Black Tea</li>
-          <li>White Tea</li>
-          <li>
-            <span class="caret">Green Tea</span>
-            <ul class="nested">
-              <li>Sencha</li>
-              <li>Gyokuro</li>
-              <li>Matcha</li>
-              <li>Pi Lo Chun</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<script>
-  var toggler = document.getElementsByClassName("caret");
-  var i;
-
-  for (i = 0; i < toggler.length; i++) {
-    toggler[i].addEventListener("click", function () {
-      this.parentElement.querySelector(".nested").classList.toggle("active");
-      this.classList.toggle("caret-down");
-    });
-  }
-</script>

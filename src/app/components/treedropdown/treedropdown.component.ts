@@ -10,6 +10,9 @@ export class TreeDropdownComponent implements OnInit {
   constructor(private location: Location) {}
 
   isMenuOpened: boolean = false;
+  isMenuOpened1: boolean = false;
+  accessBundle: boolean = false;
+  accessBundleCategory: boolean = false;
   ngOnInit(): void {}
   signout() {
     this.location.back();
@@ -17,8 +20,23 @@ export class TreeDropdownComponent implements OnInit {
   }
   togglerMenu(): void {
     this.isMenuOpened = !this.isMenuOpened;
+    this.accessBundle = false;
+    this.accessBundleCategory = false;
+  }
+  togglerMenu1(): void {
+    this.isMenuOpened1 = !this.isMenuOpened1;
+    this.accessBundle = false;
+    this.accessBundleCategory = false;
   }
 
+  clickBundle(): void {
+    this.accessBundle = true;
+    this.accessBundleCategory = false;
+  }
+  clickBundleCategory(): void {
+    this.accessBundle = false;
+    this.accessBundleCategory = true;
+  }
   clickOutside(): void {
     this.isMenuOpened = false;
   }
