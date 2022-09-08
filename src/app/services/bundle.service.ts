@@ -1,27 +1,22 @@
 import { Injectable } from '@angular/core';
-
-import { user } from '../Models/User';
-
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Bundle } from '../Models/Bundle';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
-
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
-  private loginURL = 'http://14.177.182.182:8081/api/Auth/signin';
-
+export class BundleService {
+  private bundleURL = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private http: HttpClient) {}
-
-  public loginUser(user: user): Observable<any> {
-    return this.http.post<user>(this.loginURL, user, httpOptions).pipe(
+  public getBundle(): Observable<Bundle[]> {
+    return this.http.get<Bundle[]>(this.bundleURL).pipe(
       tap((res) => console.log(`res ${JSON.stringify(res)}`)),
       catchError((error) => of())
     );

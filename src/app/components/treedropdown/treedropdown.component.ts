@@ -25,8 +25,7 @@ export class TreeDropdownComponent implements OnInit {
   }
   togglerMenu1(): void {
     this.isMenuOpened1 = !this.isMenuOpened1;
-    this.accessBundle = false;
-    this.accessBundleCategory = false;
+    
   }
 
   clickBundle(): void {

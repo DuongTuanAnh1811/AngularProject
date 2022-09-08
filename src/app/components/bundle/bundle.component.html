@@ -1,18 +1,21 @@
-<p>bundle works!</p>
-<nz-table #basicTable [nzData]="listOfData">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Address</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let data of basicTable.data">
-      <td>{{ data.name }}</td>
-      <td>{{ data.age }}</td>
-      <td>{{ data.address }}</td>
-    </tr>
-  </tbody>
-</nz-table>
+<div>
+  <h1>Bundle</h1>
+  <nz-table #bundleDatas [nzData]="bundleData" [nzPageSize]="5">
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of bundleDatas.data">
+        <td>{{ data.userId }}</td>
+        <td>{{ data.id }}</td>
+        <td>{{ data.title }}</td>
+        <td>{{ data.body }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
