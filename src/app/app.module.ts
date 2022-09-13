@@ -1,4 +1,8 @@
-import { TreeviewchildComponent } from './components/treeviewchild/treeviewchild.component';
+import { TreeviewchildComponent } from './components/treeview/treeviewchild/treeviewchild.component';
+import { Treeviewchild2Component } from './components/treeview/treeviewchild2/treeviewchild2.component';
+import { Treeviewchild3Component } from './components/treeview/treeviewchild3/treeviewchild3.component';
+import { Treeviewchild31Component } from './components/treeview/treeviewchild3/treeviewchild3.1/treeviewchild3.1.component';
+import { Treeviewchild32Component } from './components/treeview/treeviewchild3/treeviewchild3.2/treeviewchild3.2.component';
 import { TreeviewComponent } from './components/treeview/treeview.component';
 import { BundlecategoryComponent } from './components/bundlecategory/bundlecategory.component';
 import { BundleComponent } from './components/bundle/bundle.component';
@@ -38,6 +42,10 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     BundlecategoryComponent,
     TreeviewComponent,
     TreeviewchildComponent,
+    Treeviewchild2Component,
+    Treeviewchild3Component,
+    Treeviewchild31Component,
+    Treeviewchild32Component,
   ],
   imports: [
     BrowserModule,

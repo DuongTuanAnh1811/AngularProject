@@ -1,4 +1,17 @@
 <ul>
-  <span><a (click)="toggleOn()" >{{icon}}</a>Menu</span>
-  <li *ngIf="check"><app-treeviewchild [datas]="Datas"></app-treeviewchild></li>
+  <span
+    ><a (click)="toggleOn()">{{ icon }}</a
+    >Menu</span
+  >
+  <!-- <li *ngIf="check"><app-treeviewchild [datas]="Datas"></app-treeviewchild></li> -->
+  <ul *ngIf="check">
+    <li>Bundle<app-treeviewchild></app-treeviewchild></li>
+    <li>Bundle Category<app-treeviewchild2></app-treeviewchild2></li>
+    <li>
+      <a (click)="toggleOn1()">{{ icon1 }}</a
+      >Other<app-treeviewchild3 [check]="check1"></app-treeviewchild3>
+    </li>
+  </ul>
 </ul>
+
+<button (click)="signout()">sign out</button>

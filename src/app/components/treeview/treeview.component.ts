@@ -1,6 +1,6 @@
 import { Data } from './../../Models/Data';
 import { Component, OnInit } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-treeview',
   templateUrl: './treeview.component.html',
@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TreeviewComponent implements OnInit {
   check: boolean = false;
+  check1: boolean = false;
   icon: string = '+';
+  icon1: string = '+';
   Datas: Data[] = [
     {
       id: 1,
@@ -21,11 +23,9 @@ export class TreeviewComponent implements OnInit {
     {
       id: 3,
       name: 'Other',
-      
     },
-
   ];
-  constructor() {}
+  constructor(private location: Location) {}
 
   ngOnInit(): void {}
 
@@ -34,5 +34,15 @@ export class TreeviewComponent implements OnInit {
     if (this.check === true) {
       this.icon = '-';
     } else this.icon = '+';
+  }
+  toggleOn1(): void {
+    this.check1 = !this.check1;
+    if (this.check1 === true) {
+      this.icon1 = '-';
+    } else this.icon1 = '+';
+  }
+  signout() {
+    this.location.back();
+    localStorage.clear();
   }
 }

@@ -1,24 +1,21 @@
-<div class="menu-container">
-  <div class="menu-toggler" (click)="togglerMenu()">Menu</div>
-  <div class="menu" *ngIf="isMenuOpened">
-    <div class="menu-item" (click)="clickBundle()">Bundle</div>
-    <div class="menu-item" (click)="clickBundleCategory()">Bundle category</div>
-    <div class="menu-item" (click)="togglerMenu1()">
-      About
-      <div class="menu" *ngIf="isMenuOpened1">
-        <div class="menu-item">Other 1</div>
-        <div class="menu-item">Other 2</div>
-      </div>
-    </div>
-  </div>
-</div>
+<div>
+  <ul *ngFor="let tab of tabs">
+    <a (click)="toggleOn(tab.name)">+</a>
+    {{
+      tab.name
+    }}
+    <ng-container *ngFor="let project of projects">
+      <li class="project" *ngIf="tab.name == project.nameTab && check">
+        <a (click)="toggleOn1(project.name) ">+</a>
+        {{ project.name }}
 
-<span *ngIf="accessBundle; then bundle"> </span>
-<ng-template #bundle>
-  <app-bundle> </app-bundle>
-</ng-template>
-<span *ngIf="accessBundleCategory; then bundleCategory"> </span>
-<ng-template #bundleCategory>
-  <app-bundlecategory></app-bundlecategory>
-</ng-template>
-<button (click)="signout()">Sign Out</button>
+        <ng-container *ngFor="let product of products">
+          <li class="product" *ngIf="product.nameProject == project.name && check1">
+            {{ product.name }}
+          </li>
+        </ng-container>
+      </li>
+    </ng-container>
+  </ul>
+</div>
+>
