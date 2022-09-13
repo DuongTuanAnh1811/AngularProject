@@ -1,3 +1,5 @@
+import { TreeviewchildComponent } from './components/treeviewchild/treeviewchild.component';
+import { TreeviewComponent } from './components/treeview/treeview.component';
 import { BundlecategoryComponent } from './components/bundlecategory/bundlecategory.component';
 import { BundleComponent } from './components/bundle/bundle.component';
 import { NgModule } from '@angular/core';
@@ -34,6 +36,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     TreeDropdownComponent,
     BundleComponent,
     BundlecategoryComponent,
+    TreeviewComponent,
+    TreeviewchildComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,7 +27,7 @@ export class SigninComponent implements OnInit {
       this.accessToken = localStorage.getItem('accessToken');
       console.log('accessToken', accessToken);
       if (this.accessToken) {
-        this.router.navigate(['/treeDropdown']);
+        this.router.navigate(['/treeView']);
       }
     });
     console.log('accessToken', this.accessToken);
