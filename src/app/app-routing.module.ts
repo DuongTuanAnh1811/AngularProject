@@ -1,3 +1,4 @@
+import { ParentComponent } from './components/parentcomponent/parentcomponent.component';
 import { TreeviewComponent } from './components/treeview/treeview.component';
 
 import { SigninComponent } from './components/signin/signin.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'sigin', component: SigninComponent },
   { path: 'treeDropdown', component: TreeDropdownComponent },
   { path: 'treeView', component: TreeviewComponent },
+  { path: 'parent', component: ParentComponent },
 ];
 
 @NgModule({

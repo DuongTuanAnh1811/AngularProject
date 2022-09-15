@@ -1,0 +1,8 @@
+<ul *ngFor="let data of dataChild">
+  <li>{{ data.name }}</li>
+  <ng-container *ngIf="data.child">
+    <ul *ngFor="let data of data.child">
+      <li>{{ data.name }}</li>
+    </ul>
+  </ng-container>
+</ul>
